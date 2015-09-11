@@ -24,8 +24,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (businesses != nil) {
-            println("count");
-            println(businesses.count)
             return businesses.count
         } else {
             return 0
@@ -51,7 +49,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         
         self.bizListTableView.dataSource = self
         self.bizListTableView.delegate = self
-        
         updateTable()
         
         // initialize UISearchBar
@@ -74,18 +71,21 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     
     func getSortBy() -> YelpSortMode {
         var userDefaults = NSUserDefaults.standardUserDefaults()
-        var sortBy = userDefaults.valueForKey("sortBy") as! String
-        
-        switch(sortBy) {
+        var sortBy = userDefaults.valueForKey("sortBy") as? String
+        if let sortBy = sortBy {
+            switch(sortBy) {
             case "Best Match":
                 return YelpSortMode.BestMatched
             case "Distance":
                 return YelpSortMode.Distance
             case "Highest Rated":
                 return YelpSortMode.HighestRated
-        default:
+            default:
+                return YelpSortMode.Distance
+                
+            }
+        } else {
             return YelpSortMode.Distance
-            
         }
         
     }
