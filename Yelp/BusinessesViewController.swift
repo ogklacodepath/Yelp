@@ -48,15 +48,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
-//            self.businesses = businesses
-//            
-//            for business in businesses {
-//                println(business.name!)
-//                println(business.address!)
-//            }
-//        })
         
         self.bizListTableView.dataSource = self
         self.bizListTableView.delegate = self
@@ -130,15 +121,11 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        navigationItem.title = "Cancel"
     }
-    */
+    
     
     func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
         searchBar.setShowsCancelButton(true, animated: true)
@@ -156,9 +143,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        println("Search Bar Button Clicked")
         searchTerm = searchBar.text
-        println(searchTerm)
         searchBar.resignFirstResponder()
         updateTable()
         

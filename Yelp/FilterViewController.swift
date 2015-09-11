@@ -220,6 +220,13 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
         self.filterTable.dataSource = self;
         self.filterTable.delegate = self;
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationItem.title = "Filter"
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        var rightButton = UIBarButtonItem(title: "Search", style: .Plain, target: self, action: Selector("sayHello"))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
 
 }
 

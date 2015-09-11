@@ -141,7 +141,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="foP-Va-nTC">
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="Ltk-GT-bYO">
-                            <color key="tintColor" red="1" green="0.05040543238507722" blue="0.35049930739571167" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.98904193794813888" green="1" blue="0.9849008029377031" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="eQg-yl-3wE" kind="show" id="0nB-Dl-fvt"/>
                             </connections>
@@ -249,6 +249,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wFY-fd-LuK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.20365921518015973" blue="0.020257064355307275" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.98904193789999995" green="1" blue="0.98490080290000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="0.98904193789999995" green="1" blue="0.98490080290000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
