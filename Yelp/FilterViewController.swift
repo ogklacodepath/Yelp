@@ -10,6 +10,7 @@ import UIKit
 
 class FilterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+
     @IBOutlet weak var filterTable: UITableView!
     var filterDict :[NSMutableDictionary] = [
         [
@@ -125,7 +126,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
         cell.controlHolder.removeSubviews()
         if (enableToggling) {
             let toggleLabel = UILabel()
-            toggleLabel.text = "v"
+            toggleLabel.text = "\u{000025bc}";
             toggleLabel.sizeToFit()
             cell.controlHolder.addSubview(toggleLabel)
         } else {
@@ -153,7 +154,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
             if (filterDict[switchView.filterId!]["show"] != nil) {
                 filterDict[switchView.filterId!].setValue(false, forKey: "show")
             }
-            filterTable.reloadData()
+            filterTable.reloadSections(NSIndexSet(index: switchView.filterId!), withRowAnimation: UITableViewRowAnimation.Top)
         case "category":
             var categoryArr = userDefaults.valueForKey(filterName) as? NSMutableArray
             if (categoryArr == nil) {
@@ -162,11 +163,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
             if (switchView.on) {
                 categoryArr?.addObject(switchView.filterLabel!)
             } else {
-                println("trying to remove")
-                println(categoryArr)
-                println(switchView.filterLabel!)
                 categoryArr?.removeObject(switchView.filterLabel!)
-                println("removed")
             }
             userDefaults.setValue(categoryArr, forKey: filterName)
         default:
@@ -201,7 +198,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
         if (filterSection["show"] != nil) {
             filterDict[indexPath.section].setValue(!(filterSection["show"] as! Bool), forKey: "show")
         }
-        filterTable.reloadData()
+        filterTable.reloadSections(NSIndexSet(index: indexPath.section), withRowAnimation: UITableViewRowAnimation.Bottom)
     }
     
     
@@ -215,17 +212,18 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
 
+
     
     override func viewDidLoad() {
         self.filterTable.dataSource = self;
         self.filterTable.delegate = self;
+        self.filterTable.estimatedRowHeight = 100
+        self.filterTable.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(animated: Bool) {
-        navigationItem.title = "Filter"
+        //navigationItem.title = "Filter"
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        var rightButton = UIBarButtonItem(title: "Search", style: .Plain, target: self, action: Selector("sayHello"))
-        self.navigationItem.rightBarButtonItem = rightButton
     }
 
 }

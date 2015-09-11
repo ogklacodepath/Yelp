@@ -61,9 +61,10 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         // add search bar to navigation bar
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
-
-        //self.bizListTableView.rowHeight = UITableViewAutomaticDimension
-        //self.bizListTableView.estimatedRowHeight = 400
+        
+        self.bizListTableView.estimatedRowHeight = 400
+        self.bizListTableView.rowHeight = UITableViewAutomaticDimension
+        
     }
 
     override func didReceiveMemoryWarning() {

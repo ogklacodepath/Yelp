@@ -28,7 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x89-Pa-zja">
-                                                    <rect key="frame" x="8" y="13" width="120" height="120"/>
+                                                    <rect key="frame" x="8" y="9.5" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="l1y-nT-Mx9"/>
                                                         <constraint firstAttribute="width" constant="120" id="ug3-S1-dcb"/>
@@ -98,9 +98,11 @@
                                                 <constraint firstItem="dpT-iJ-Ggn" firstAttribute="top" secondItem="PU3-Da-5nv" secondAttribute="bottom" constant="5" id="Cez-tO-1UX"/>
                                                 <constraint firstItem="YuE-En-Lz2" firstAttribute="leading" secondItem="x89-Pa-zja" secondAttribute="trailing" constant="5" id="G9E-T8-KTK"/>
                                                 <constraint firstItem="PU3-Da-5nv" firstAttribute="top" secondItem="t6a-52-NM6" secondAttribute="topMargin" constant="5" id="JBY-Kx-t3B"/>
+                                                <constraint firstAttribute="bottom" secondItem="x89-Pa-zja" secondAttribute="bottom" constant="5" id="Kv4-Bn-4PB"/>
                                                 <constraint firstItem="dpT-iJ-Ggn" firstAttribute="leading" secondItem="YuE-En-Lz2" secondAttribute="trailing" constant="8" id="RzD-82-hef"/>
                                                 <constraint firstItem="SBh-Zp-2ob" firstAttribute="leading" secondItem="x89-Pa-zja" secondAttribute="trailing" constant="5" id="S7M-ow-eAL"/>
                                                 <constraint firstItem="x89-Pa-zja" firstAttribute="leading" secondItem="t6a-52-NM6" secondAttribute="leadingMargin" id="Tkg-KN-mHh"/>
+                                                <constraint firstAttribute="bottom" secondItem="x89-Pa-zja" secondAttribute="bottom" constant="5" id="Us3-zd-NSH"/>
                                                 <constraint firstItem="4I4-fM-2ps" firstAttribute="top" secondItem="t6a-52-NM6" secondAttribute="topMargin" constant="13" id="VBm-yT-nMF"/>
                                                 <constraint firstItem="x89-Pa-zja" firstAttribute="top" secondItem="t6a-52-NM6" secondAttribute="topMargin" constant="5" id="W1m-NV-DJt"/>
                                                 <constraint firstItem="4I4-fM-2ps" firstAttribute="leading" secondItem="PU3-Da-5nv" secondAttribute="trailing" constant="5" id="dHf-tI-MPs"/>
@@ -114,6 +116,7 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="Kv4-Bn-4PB"/>
                                                     <exclude reference="dHf-tI-MPs"/>
                                                 </mask>
                                             </variation>
@@ -155,7 +158,7 @@
             </objects>
             <point key="canvasLocation" x="2600" y="358"/>
         </scene>
-        <!--Filter View Controller-->
+        <!--Filter-->
         <scene sceneID="P2u-y6-tCg">
             <objects>
                 <viewController id="eQg-yl-3wE" customClass="FilterViewController" customModule="Yelp" customModuleProvider="target" sceneMemberID="viewController">
@@ -167,7 +170,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cV9-wD-ZC3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cV9-wD-ZC3">
                                 <rect key="frame" x="0.0" y="69" width="600" height="526"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -178,9 +181,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Afghan Cuisine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLg-cb-JeT">
-                                                    <rect key="frame" x="5" y="13" width="200" height="20.5"/>
+                                                    <rect key="frame" x="10" y="5" width="200" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="lRW-6b-9Ve"/>
+                                                        <constraint firstAttribute="height" constant="20.5" id="qWF-nM-Y0L"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -197,8 +201,9 @@
                                             <constraints>
                                                 <constraint firstItem="hLg-cb-JeT" firstAttribute="leading" secondItem="3xD-TY-ytM" secondAttribute="leadingMargin" constant="5" id="Byr-Ns-2RO"/>
                                                 <constraint firstItem="fZt-Ok-Vg1" firstAttribute="leading" secondItem="hLg-cb-JeT" secondAttribute="trailing" constant="5" id="H0K-HB-OUt"/>
-                                                <constraint firstItem="hLg-cb-JeT" firstAttribute="top" secondItem="3xD-TY-ytM" secondAttribute="topMargin" constant="5" id="bRE-Qw-nnZ"/>
-                                                <constraint firstItem="hLg-cb-JeT" firstAttribute="leading" secondItem="3xD-TY-ytM" secondAttribute="leading" constant="5" id="byB-V6-z0s"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hLg-cb-JeT" secondAttribute="bottom" constant="10" id="XHc-B9-kJg"/>
+                                                <constraint firstItem="hLg-cb-JeT" firstAttribute="top" secondItem="3xD-TY-ytM" secondAttribute="topMargin" constant="10" id="bRE-Qw-nnZ"/>
+                                                <constraint firstItem="hLg-cb-JeT" firstAttribute="leading" secondItem="3xD-TY-ytM" secondAttribute="leading" constant="10" id="byB-V6-z0s"/>
                                                 <constraint firstItem="fZt-Ok-Vg1" firstAttribute="top" secondItem="3xD-TY-ytM" secondAttribute="top" constant="5" id="cnc-U3-WfL"/>
                                                 <constraint firstAttribute="trailing" secondItem="fZt-Ok-Vg1" secondAttribute="trailing" constant="5" id="j7u-ig-VRV"/>
                                             </constraints>
@@ -233,6 +238,16 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Filter" id="jPR-2o-beU">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="uRM-kD-B8h">
+                            <color key="tintColor" red="0.98904193789999995" green="1" blue="0.98490080290000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="2xI-yr-O5N" kind="show" id="RgM-0d-awm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="filterTable" destination="cV9-wD-ZC3" id="zHt-8A-UHs"/>
                     </connections>
@@ -265,4 +280,7 @@
             <point key="canvasLocation" x="1788" y="358"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RgM-0d-awm"/>
+    </inferredMetricsTieBreakers>
 </document>
